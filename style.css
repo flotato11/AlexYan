@@ -43,6 +43,24 @@
   }
 }
 
+@keyframes lineanim {
+  0% {
+    stroke-dashoffset: -2000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes lineanimreverse {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: -2000;
+  }
+}
+
 /*hide scrollbar*/
 ::-webkit-scrollbar {
     display: none;
@@ -50,17 +68,17 @@
 
 /*root colors and fonts*/
 :root {
-  --fadedred: rgba(207,103,102,.6);
-  --darkblue: #031424;
-  --lightblue: #97AABD;
-  --transparentblue: rgba(151,170,189, .6);
+  --lightblue: #7dbed9; /*size1*/
+  --skyblue: #00acc1; /*size2*/
+  --oceanblue: #0F6178; /*size3*/
+  --deepblue: #00374c; /*navbar*/
+  --darkblue: #031424; /*memed*/
+  --tartpink: rgba(255,64,129, .5);
   --lightbeige: rgba(238,226,220, .25);
+  --pseudowhite: #fffcef;
   --mediumbeige: #EDC7B7;
   --lightgrey: #C5C6C7;
-  --oceanblue: #0F6178;
-  --fadedpurple: rgba(162,133,181, .5);
-  --darkpurple: rgba(37,39,77,.8);
-  --lightgreen: #155444;
+
   --titlefont1: "Lemon Milk";
   --titlefont2: "Caviar Dreams Bold";
   --titlefont3: "Coolvetica";
@@ -73,8 +91,28 @@ html, body {
   width: 100vw;
   height: 100%;
   margin: 0;
-  overflow: auto;
-  overflow-x: hidden;
+  overflow: hidden;
+}
+
+/*circle animation*/
+.circlemain {
+  animation: lineanim 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  stroke-dasharray: 2000;
+  stroke-width: 1vh;
+  stroke: black;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.circle {
+  display: none;
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  z-index: 2
 }
 
 /*intro container w/ logo*/
@@ -90,7 +128,7 @@ html, body {
 }
 
 #navbar {
-    background-color: var(--darkblue);
+    background-color: #00374c;
     position: fixed;
     top: 0px;
     width: 100vw;
@@ -104,7 +142,7 @@ html, body {
 #navbar a {
     float: right;
     display: block;
-    color: var(--lightbeige);
+    color: var(--pseudowhite);
     text-align: center;
     padding: 1.1vh;
     padding-left: 1vw;
@@ -116,19 +154,20 @@ html, body {
 }
 
 #navbar a:hover {
-    background-color: var(--lightbeige);
-    color: var(--darkblue);
+    background-color: var(--pseudowhite);
+    color: var(--deepblue);
     transition-duration: .3s;
     transition-delay: 0s;
 }
 
 #navbar #alexyan {
   float: left;
+  cursor: pointer;
 }
 
 #navbar #alexyan:hover {
-  background-color: var(--darkblue);
-  color: var(--lightbeige);
+  background-color: var(--deepblue);
+  color: var(--pseudowhite);
   transition-duration: .3s;
 }
 
@@ -141,7 +180,7 @@ html, body {
     font-size: 2.4vh;
     border: none;
     outline: none;
-    color: var(--lightbeige);
+    color: var(--pseudowhite);
     letter-spacing: 1px;
     background-color: inherit;
     margin: 0;
@@ -157,7 +196,8 @@ html, body {
 .dropdowncontent, .dropdowncontent2 {
     display: none;
     position: absolute;
-    background-color: var(--darkblue);
+    background-color: var(--deepblue);
+    color: var(--pseudowhite);
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     top: 5vh;
@@ -175,7 +215,7 @@ html, body {
   height: 95vh;
   left: 100vw;
   top: 5vh;
-  background-color: var(--darkblue);
+  background-color: var(--deepblue);
   transition-duration: .5s;
   transition-timing-function: ease-in-out;
   z-index: 10;
@@ -184,33 +224,28 @@ html, body {
 .contactcontent {
   font-family: var(--bodyfont2);
   font-size: 2.5vh;
-  color: var(--lightbeige);
+  color: var(--pseudowhite);
   margin-top: 2.5vh;
   margin-left: 1vw;
   margin-right: 1vw;
   width: 15vw;
 }
 
-.contactlink:hover {
-  color: blue;
-}
-
 .contactbutton{
   cursor: pointer;
 }
 
-
-/*new*/
-
+/*no hover on intro*/
 .blockyboy {
   background-color: black;
   opacity: 0;
   position: fixed;
   height: 100vh;
   width: 100vw;
-  z-index: 2;
+  z-index: 3;
 }
 
+/*intro sequence*/
 .c1title {
   position: absolute;
   top: 48vh;
@@ -229,14 +264,70 @@ html, body {
   opacity: 1;
 }
 
-.intrologo {
-  height: 40vh;
-  width: 40vh;
+/*back button*/
+.backarrow {
+  opacity: 0;
+  position: fixed;
+  top: 8vh;
+  left: 3vh;
+  height: 6vh;
+  width: 6vh;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.backarrow:hover {
+  transform: scale(1.05);
+  transition: .3s;
+  box-shadow: 0 0 0.5vh black;
+}
+
+/*question mark*/
+.questionmark {
   position: absolute;
-  top: 55vh;
-  left: 50vw;
-  transform: translate(-50%,-50%);
-  display: none;
+  top: 8vh;
+  right: 3vh;
+  height: 3vh;
+  width: 3vh;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.questionmark:hover {
+  transform: scale(1.05);
+  transition: .3s;
+  box-shadow: 0 0 0.3vh black;
+}
+
+.info {
+  position: absolute;
+  top: 7vh;
+  right: 2vh;
+  height: 21.7vh;
+  width: 32vh;
+  background-color: var(--lightbeige);
+  box-shadow: 0 0 1vh rgba(0,0,0,.25);
+  opacity: 0;
+}
+
+.wordcolor {
+  position: absolute;
+  height: 3vh;
+  width: 3vh;
+  border-radius: 80%;
+  top: 3vh;
+  left: 3vh;
+}
+
+.worddescription {
+  position: absolute;
+  font-size: 4vh;
+  margin-top: 2vh;
+  top: 0vh;
+  left: 8vh;
+  font-family: var(--titlefont3)
 }
 
 .titlesequence {
@@ -245,6 +336,7 @@ html, body {
   top: 48vh;
   left: 50vw;
   transform: translate(-50%,-50%);
+  z-index: 2;
 }
 
 .titlesequencewords {
@@ -254,7 +346,6 @@ html, body {
 .size3 {
   font-size: 10vh;
   color: var(--oceanblue);
-  z-index: 0;
   transition: .5s;
   opacity: 0;
   cursor: pointer;
@@ -262,8 +353,7 @@ html, body {
 
 .size2 {
   font-size: 7vh;
-  color: var(--darkpurple);
-  z-index: 0;
+  color: var(--skyblue);
   transition: .5s;
   opacity: 0;
   cursor: pointer;
@@ -271,8 +361,7 @@ html, body {
 
 .size1 {
   font-size: 5vh;
-  color: var(--lightgreen);
-  z-index: 2;
+  color: var(--lightblue);
   transition: .5s;
   opacity: 0;
   cursor: pointer;
@@ -301,6 +390,7 @@ html, body {
   position: absolute;
   top: -15vh;
   left: -40.4vh;
+  z-index: 2;
 }
 
 .ts-photography {
@@ -397,12 +487,49 @@ html, body {
   left: 25.5vh;
 }
 
-/*transition container*/
-.transitioncontainer {
-  position: fixed;
+/*container 2 :: bitcoin project*/
+
+.container2 {
+  position: absolute;
+  top: 100vh;
+  left: 0vw;
   height: 100vh;
-  width: 10vw;
-  background-color: var(--lightblue);
+  width: 100vw;
+  background-color: var(--mediumbeige);
+  z-index: 1;
+}
+
+.container2contents {
   opacity: 0;
+}
+
+.wordarray {
+  position: absolute;
+  top: 10vh;
+  left: 4vw;
+  z-index: 3;
+  font-family: var(--titlefont3);
   float: left;
+}
+
+.wordarray div {
+  margin-left: 4vh;
+  float: left;
+}
+
+.size3static {
+  font-size: 10vh;
+  color: var(--oceanblue);
+}
+
+.size2static {
+  font-size: 7vh;
+  color: var(--skyblue);
+  margin-top: 3vh;
+}
+
+.size1static {
+  font-size: 5vh;
+  color: var(--lightblue);
+  margin-top: 5vh;
 }
