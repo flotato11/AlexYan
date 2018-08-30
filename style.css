@@ -149,13 +149,12 @@ html, body {
     font-family: var(--bodyfont2);
     letter-spacing: 1px;
     font-size: 2.4vh;
+    transition: .3s;
 }
 
 #navbar a:hover {
     background-color: white;
     color: var(--deepblue);
-    transition-duration: .3s;
-    transition-delay: 0s;
 }
 
 #navbar #alexyan {
@@ -196,7 +195,7 @@ html, body {
   height: 21.7vh;
   width: 32vh;
   background-color: white;
-  box-shadow: 0 0 1vh black;
+  box-shadow: 0 0 .5vh rgba(30,30,30,0.3);
   opacity: 0;
   z-index: 1;
 }
@@ -247,6 +246,129 @@ html, body {
   cursor: pointer;
 }
 
+/*resume*/
+.resumecontainer {
+  position: absolute;
+  top: 0vh;
+  left: 0vw;
+  height: 700vh;
+  width: 100vw;
+  background-color: white;
+  z-index: 0;
+  display: none;
+}
+
+.resumecontainercontents {
+  opacity: 0;
+}
+
+.resumeheaders {
+  position: fixed;
+  top: 50vh;
+  left: 15vh;
+  transform: translate(0%,-50%);
+  font-family: var(--titlefont3);
+  font-size: 5vh;
+  color: var(--darkblue);
+  text-align: right;
+  transition: .3s;
+}
+
+.resumeheaders a{
+  text-decoration: none;
+  color: var(--darkblue);
+}
+
+.resumelink {
+  display: block;
+}
+
+.resumeverticalline {
+  height: 75vh;
+  width: .5vh;
+  background-color: var(--darkblue);
+  z-index: 2;
+  position: fixed;
+  top: 50vh;
+  left: 43vh;
+  transform: translate(0%,-50%);
+}
+
+.resumetitle {
+  position: absolute;
+  top: 10vh;
+  left: 52vh;
+  font-family: var(--titlefont3);
+  font-size: 10vh;
+  color: var(--darkblue);
+}
+
+.headshot {
+  position: absolute;
+  left: 51vh;
+  top: 25vh;
+  border-radius: 50%;
+  height: 20vh;
+  width: 15vh;
+}
+
+.abouttaglines {
+  font-family: var(--bodyfont3);
+  color: var(--oceanblue);
+  position: absolute;
+  left: 70vh;
+  top: 27vh;
+  font-size: 4vh;
+  margin-top: 1vh;
+}
+
+.aboutdescription {
+  font-family: var(--bodyfont2);
+  color: var(--deepblue);
+  position: absolute;
+  left: 70vh;
+  top: 47vh;
+  font-size: 3vh;
+  margin-top: 1vh;
+  width: 100vh;
+}
+
+.resumesubheader {
+  font-family: var(--bodyfont3);
+  font-size: 6vh;
+  position: absolute;
+  color: var(--oceanblue);
+}
+
+.workcontainer {
+  position: absolute;
+  top: 122vh;
+  left: 52vh;
+}
+
+.worktitle {
+  font-family: var(--bodyfont3);
+  font-size: 7vh;
+  color: var(--oceanblue);
+  margin-top: 13vh;
+}
+
+.workemployer, .workyear, .workdescription, .workhours, .workreference, .worknumber {
+  font-size: 4vh;
+  margin-top: 1vh;
+  font-family: var(--bodyfont2);
+  color: var(--oceanblue);
+}
+
+.workdescription {
+  width: 70vh;
+}
+
+.worknumber {
+  position: relative;
+
+}
+
 /*no hover on intro*/
 .blockyboy {
   background-color: black;
@@ -275,7 +397,7 @@ html, body {
 }
 
 /*back button*/
-.backarrow {
+.backarrow, .resumebackarrow {
   opacity: 0;
   position: fixed;
   top: 8vh;
@@ -287,7 +409,11 @@ html, body {
   z-index: 3;
 }
 
-.backarrow:hover {
+.resumebackarrow {
+  display: none;
+}
+
+.backarrow:hover, .resumebackarrow:hover {
   transform: scale(1.05);
   transition: .3s;
   box-shadow: 0 0 0.5vh black;
@@ -719,7 +845,7 @@ img {
 }
 
 .prev1:hover, .next1:hover {
-  background-color: rgba(255,255,255, 0.4));
+  background-color: var(--buttons);
   color: var(--darkblue);
 }
 
@@ -802,4 +928,20 @@ img {
   background-color: white;
   z-index: 2;
   display: none;
+}
+
+/*container 7 :: com*/
+
+.container7 {
+  position: absolute;
+  top: 0vh;
+  left: 0vw;
+  height: 100vh;
+  width: 100vw;
+  background-color: white;
+  z-index: 0;
+}
+
+.container7contents {
+  opacity: 0;
 }

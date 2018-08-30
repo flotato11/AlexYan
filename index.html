@@ -12,7 +12,7 @@
 
 <div id="navbar">
   <a class="showContact contactbutton">contact</a>
-  <a style="cursor: pointer;">resume</a>
+  <a class="resume" style="cursor: pointer;">resume</a>
   <a id="alexyan">ALEX YAN</a>
 </div>
 
@@ -39,6 +39,72 @@
   </div>
 </div>
 
+<div class="resumecontainer"> <!--RESUME-->
+  <div class="resumecontainercontents">
+    <p id="textboi" style="position:fixed; right:0; bottom:0; padding:10px; font-weight:bold; z-index: 10;"> </p>
+    <div class="resumeheaders">
+      <a href="#about" class="resumelink aboutresumeheader">about</a>
+      <a href="#education" class="resumelink educationresumeheader">education</a>
+      <a href="#work" class="resumelink workresumeheader">work</a>
+      <a href="#work" class="resumelink internshipresumeheader">internship</a>
+      <a href="#skills" class="resumelink">skills</a>
+      <a href="#languages" class="resumelink">languages</a>
+    </div>
+    <div class="resumeverticalline"></div>
+
+      <div id="about" class="resumetitle">about</div>
+      <img class="headshot" src="images/alexyan.jpg"><img>
+      <div class="abouttaglines">
+        <div>aspiring entrepreneur</div>
+        <div>impassioned web and graphic designer</div>
+        <div>confident leader and flexible team player</div>
+      </div>
+      <div class="aboutdescription">
+        Here are some random words. I am going to fill this out later, but I need things to fill it up for now. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+      </div>
+
+      <div style="top: 80vh;" id="education" class="resumetitle">education</div>
+      <a href="https://www.nuevaschool.org/" target="_blank"><img style="position: absolute; height: 20vh; top: 95vh; left: 53vh;" src="images/nueva.jpg"></img></a>
+      <div style="top: 97vh; left: 90vh;" class="resumesubheader">The Nueva School</div>
+      <div style="top: 104.7vh; left: 90.3vh; font-size: 3.5vh;" class="resumesubheader">2015 - Present</div>
+      <div style="top: 109vh; left: 90.3vh; font-size: 3.5vh;" class="resumesubheader">Senior</div>
+
+      <div style="top: 122vh;" id="work" class="resumetitle">work</div>
+      <div class="workcontainer">
+        <div class="worktitle">Assistant Tennis Coach</div>
+        <div class="workyear"><span style="font-family: var(--bodyfont3)">2013 - Present</span></div>
+        <div class="workemployer"><span style="font-family: var(--bodyfont3)">Employer : </span>Zalles Tennis</div>
+        <div class="workdescription"><span style="font-family: var(--bodyfont3)">Responsabilities : </span>Coached young athletes of ages 6 to 14 on various aspects of tennis, from simple strength building drills to granular shot accuracy training. Worked to develop the player's consistency on strokes, footwork, and technique. </div>
+        <div class="workhours"><span style="font-family: var(--bodyfont3)">Hours : </span>Saturdays (8am - 12pm)</div>
+        <div class="workreference"><span style="font-family: var(--bodyfont3)">Reference : </span>Raul Cossio (Head Coach)</div>
+        <div class="worknumber">(650) 888-0278</div>
+      </div>
+
+      <div style="top: 202vh" class="workcontainer">
+        <div class="worktitle">Tennis Summer Camp Instructor</div>
+        <div class="workyear"><span style="font-family: var(--bodyfont3)">Summer 2018</span></div>
+        <div class="workemployer"><span style="font-family: var(--bodyfont3)">Employer : </span>Zalles Tennis</div>
+        <div class="workdescription"><span style="font-family: var(--bodyfont3)">Responsabilities : </span>Coached young athletes of ages 8 to 15 on developing an all-aroung game, strategy, footwork, and toughness. Match strategies and fitness are incorporated into games and drills to ready players for USTA tournaments.</div>
+        <div class="workhours"><span style="font-family: var(--bodyfont3)">Hours : </span>Monday - Friday (9am - 12pm)</div>
+        <div class="workreference"><span style="font-family: var(--bodyfont3)">Reference : </span>Raul Cossio (Head Coach)</div>
+        <div class="worknumber">(650) 888-0278</div>
+      </div>
+
+      <div style="top: 282vh" class="workcontainer">
+        <div class="worktitle">Web Design Instructor</div>
+        <div class="workyear"><span style="font-family: var(--bodyfont3)">Summer 2018</span></div>
+        <div class="workemployer"><span style="font-family: var(--bodyfont3)">Employer : </span>Local</div>
+        <div class="workdescription"><span style="font-family: var(--bodyfont3)">Responsabilities : </span>Worked with a handful of aspiring web-designers aged 10-12 to develop a proficient understanding of HTML, CSS, Javascript, and jQuery. Introduced basic graphic design concepts and helped students form a strong foundation.</div>
+        <div class="workhours"><span style="font-family: var(--bodyfont3)">Hours : </span>Mondays (7pm - 9pm)</div>
+        <div class="workreference"><span style="font-family: var(--bodyfont3)">Reference : </span>Tom Shahar (Peer Tutor)</div>
+        <div class="worknumber">(650) 787-4681</div>
+      </div>
+  </div>
+
+  <div style="top: 302vh;" id="work" class="resumetitle">internship</div>
+
+</div>
+
 <div class="container1">
   <div class="blockyboy"></div>
   <div class="circle">
@@ -47,6 +113,7 @@
     </svg>
   </div>
     <img class="backarrow" src="images/backarrow.png"></img>
+    <img class="resumebackarrow" src="images/backarrow.png"></img>
   <div class="titlesequence">
     <div class="titlesequencewords">
         <!--TITLE-->
@@ -88,7 +155,7 @@
     <div class="projecttitle">Cryptocurrency Exploration</div>
     <div class="verticalline"></div>
     <div class="projectyear">2017 - 2018</div>
-    <div class="projectdescription">
+    <div style="font-size: 3.84vh;" class="projectdescription">
       Researched the history of cryptocurrency and expert opinions on the topic. Learned the foundations of trading and involved myself in the market over the course of 6 months. Created a poster detailing my learning and process.
     </div>
     <img class="projectimage" src="images/crypto.jpeg"></img>
@@ -137,7 +204,7 @@
     <div class="projecttitle">Flotato Style Tile</div>
     <div class="verticalline"></div>
     <div class="projectyear">2017</div>
-    <div style="width: 85vh; font-size: 3.3vh;" class="projectdescription">
+    <div style="width: 85vh; font-size: 3.36vh;" class="projectdescription">
       Created an outline for a mock company with an emphasis on the creation, branding, and marketing of the logo. A style tile provides the client with various sketches and colorways of the logo, multiple typefaces, mock advertisements, example stationary, as well as business cards. Additionally, the style tile includes a description of the company, reasoning for the design choices, and how such decisions influence the target audience.
     </div>
     <div class="slideshow-container">
@@ -179,8 +246,8 @@
     <div class="projecttitle">"Persuasian" Foodstand</div>
     <div class="verticalline"></div>
     <div class="projectyear">2016 - 2017</div>
-    <div class="projectdescription">
-      Worked with a classmate to create a Persian/Asian fusion cuisine featuring five-spice gyro wraps. Visited food truck/stand gatherings to learn about the business and sold our creation for profit.
+    <div style="font-size: 3.84vh;" class="projectdescription">
+      Worked with a classmate to create a Persian/Asian fusion cuisine featuring five-spice gyro wraps. Visited multiple food truck/stand gatherings to learn about the business and the startup cost. Finalized our recipe and sold our creation for profit.
     </div>
     <img class="projectimage" src="images/foodstand.jpg"></img>
     <div class="enlargeimage">enlarge image</div>
@@ -204,15 +271,37 @@
     <div style="font-size: 3.55vh;" class="projectdescription">
       Attended the NSLC Leadership Camp for Business and Entrepreneurship at UC Berkeley. Underwent product/management simulations and created Zest Fresh Foods, a healthy alternative to fast food. Presented our market strategy in front of a panel of experts to receive feedback.
     </div>
-    <img class="projectimage" src="images/foodstand.jpg"></img>
+    <img class="projectimage" src="images/zest.jpg"></img>
     <div class="enlargeimage">enlarge image</div>
     <div class="projectcover"></div>
     <img class="close" src="images/close.png"></img>
   </div>
 </div>
 
+<div class="container7"> <!--COM-->
+  <div class="container7contents">
+    <div class="wordarray">
+      <div class="c-music size3static">music</div>
+      <div class="c-piano size2static">piano</div>
+      <div class="c-drive size1static">drive</div>
+    </div>
+    <div class="horizontalline"></div>
+    <div class="projecttitle">Certificate of Merit</div>
+    <div class="verticalline"></div>
+    <div class="projectyear">2007 - 2017</div>
+    <div style="font-size: 3.7vh;" class="projectdescription">
+      Completed Level 10 (Advanced Level) of the Certificate of Merit. The Certificate of Merit is program sponsored by the Music Teachers Association and is awarded to students who successfully complete a written theory exam and critiqued piano performance.
+    </div>
+    <div style="position: absolute; top: 60vh; left: 156.5vh; width: 25vh; font-size: 2vh; font-family: var(--bodyfont3);">
+      * I can't find the Level 10 Certificate, so I am just going to display the Level 9 Certificate and hope you trust me!
+    </div>
+    <img class="projectimage" src="images/com.jpg"></img>
+    <div class="enlargeimage">enlarge image</div>
+    <div class="projectcover"></div>
+    <img class="close" src="images/close.png"></img>
+  </div>
 
-
+</div>
 
 
 
